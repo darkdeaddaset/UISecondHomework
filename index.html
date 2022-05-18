@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Решение квадратного уравнения</title>
+    <meta charset="utf-8">
+    <meta name = "домашняя работа №2 студента nc">
+    <h1>Решение квадратного уравнения</h1>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>Формула квадратного уравнения: Ax<sup>2</sup>+Bx+C=0</p>
+    <p>Задайте свои коэффициенты A,B,C.</p>
+
+    <form name="coef" id="coef">
+        <p>A: <input type="text" id="a" placeholder="A" size="1"></p> 
+        <p>B: <input type="text" id="b" placeholder="B" size="1"></p>
+        <p>C: <input type="text" id="c" placeholder="C" size="1"></p>
+        <br><br>
+        <input type="button" onclick="validate();" value="Work">
+        <input type="button" onclick="reset();" value="Reset"> 
+    </form>
+
+    <table id="roots">
+        <caption>История</caption>
+    </table>
+    <script src="input.js"></script>
+</body>
