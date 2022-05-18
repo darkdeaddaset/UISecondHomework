@@ -8,7 +8,6 @@ function validate(){
     } else{
         var result = d(a,b,c);
         console.log(result);
-        //createAnswer(result);
     }
 }
 
@@ -28,7 +27,7 @@ function d(a, b, c){
     if (d == 0){
         var x = -b / (2 * a);
         result.x = "x=" + x;    
-        return result;
+        createNo(result);
     }
     if (d < 0){
         result.x = "Корней нет!";
