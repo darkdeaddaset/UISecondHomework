@@ -8,7 +8,7 @@ function validate(){
     } else{
         var result = d(a,b,c);
         console.log(result);
-        createAnswer(result);
+        //createAnswer(result);
     }
 }
 
@@ -32,14 +32,14 @@ function d(a, b, c){
     }
     if (d < 0){
         result.x = "Корней нет!";
-        return result;
+        createNo(result);
     } else {
         x1 = (-b + Math.sqrt(d))/(2 * a);
         x2 = (-b - Math.sqrt(d))/(2 * a);
 
         result.x1 = "x1=" + x1;
         result.x2 = "x2=" + x2;
-        return result;
+        createAnswer(result);
     }
 }
 
@@ -72,6 +72,19 @@ function createAnswer(result){
     x2.addEventListener("click", e =>{
         x2.remove();
     });
+}
+
+function createNo(result){
+    var table = document.getElementById('roots');
+    var row = table.insertRow();
+
+    var equation = row.insertCell();
+    var d = row.insertCell();
+    var x = row.insertCell();
+
+    equation.appendChild(document.createTextNode(result.equation));
+    d.appendChild(document.createTextNode(result.d));
+    x.appendChild(document.createTextNode(result.x));
 }
 
 function reset(){
