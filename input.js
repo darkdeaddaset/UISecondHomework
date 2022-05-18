@@ -28,8 +28,7 @@ function d(a, b, c){
         var x = -b / (2 * a);
         result.x = "x=" + x;    
         createNo(result);
-    }
-    if (d < 0){
+    } else if (d < 0){
         result.x = "Корней нет!";
         createNo(result);
     } else {
