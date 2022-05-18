@@ -3,7 +3,7 @@ caption {
 }
 
 #roots tr:nth-child(odd){
-    background-color: rgb(25, 165, 60);
+    background-color: rgb(155, 180, 161);
 }
 
 #roots tr:nth-of-type(even){

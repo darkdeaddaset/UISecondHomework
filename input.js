@@ -83,6 +83,18 @@ function createNo(result){
     equation.appendChild(document.createTextNode(result.equation));
     d.appendChild(document.createTextNode(result.d));
     x.appendChild(document.createTextNode(result.x));
+
+    equation.addEventListener("click", e =>{
+        equation.remove();
+    });
+
+    d.addEventListener("click", e =>{
+        d.remove();
+    });
+
+    x.addEventListener("click", e =>{
+        x.remove();
+    });
 }
 
 function reset(){
