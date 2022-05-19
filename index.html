@@ -11,16 +11,24 @@
     <p>Задайте свои коэффициенты A,B,C.</p>
 
     <form name="coef" id="coef">
-        <p>A: <input type="text" id="a" placeholder="A" size="1"></p> 
+        <p>A: <input type="text" id="a" placeholder="A" size="1"></p>
         <p>B: <input type="text" id="b" placeholder="B" size="1"></p>
         <p>C: <input type="text" id="c" placeholder="C" size="1"></p>
+        <p id="error"></p>
         <br><br>
         <input type="button" onclick="validate();" value="Work">
         <input type="button" onclick="reset();" value="Reset"> 
+        
     </form>
 
     <table id="roots">
-        <caption>История</caption>
+        <thead>
+            <tr>
+                <td>Коэффициенты</td>
+                <td>Дисриминант</td>
+                <td colspan="2">Корни</td>
+            </tr>
+        </thead>    
     </table>
     <script src="input.js"></script>
 </body>

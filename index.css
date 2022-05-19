@@ -2,6 +2,10 @@ caption {
     display: inline-block;
 }
 
+#error{
+    color: red;
+}
+
 #roots tr:nth-child(odd){
     background-color: rgb(155, 180, 161);
 }

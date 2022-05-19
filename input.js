@@ -4,22 +4,21 @@ function validate(){
     var c = document.coef.c.value;
 
     if (isNaN(a) || isNaN(b) || isNaN(c)){
-        console.log("Error");
-    } else{
+        error(a,b,c);
+    } else if (a==0){
+        nullA();
+    } else {
         var result = d(a,b,c);
         console.log(result);
     }
 }
 
 function d(a, b, c){
+    var error = document.getElementById("error");
+    error.innerHTML = "";
+
     result = {}
     result.equation = "a="+a+"\nb="+b+"\nc="+c;
-
-    if (a == -1){
-        a = a * (-1);
-        b = b * (-1);
-        c = c * (-1);
-    }
 
     var d = Math.pow(b,2) - 4 * a * c;
     result.d = "D=" + d;
@@ -55,20 +54,9 @@ function createAnswer(result){
     x1.appendChild(document.createTextNode(result.x1));
     x2.appendChild(document.createTextNode(result.x2));
 
-    equation.addEventListener("click", e =>{
-        equation.remove();
-    });
-
-    d.addEventListener("click", e =>{
-        d.remove();
-    });
-
-    x1.addEventListener("click", e =>{
-        x1.remove();
-    });
-
-    x2.addEventListener("click", e =>{
-        x2.remove();
+    row.addEventListener("click", e => {
+        var temp = row.rowIndex;
+        document.getElementById('roots').deleteRow(temp);
     });
 }
 
@@ -84,20 +72,31 @@ function createNo(result){
     d.appendChild(document.createTextNode(result.d));
     x.appendChild(document.createTextNode(result.x));
 
-    equation.addEventListener("click", e =>{
-        equation.remove();
-    });
 
-    d.addEventListener("click", e =>{
-        d.remove();
-    });
-
-    x.addEventListener("click", e =>{
-        x.remove();
+    row.addEventListener("click", e => {
+        var temp = row.rowIndex;
+        document.getElementById('roots').deleteRow(temp);
     });
 }
 
 function reset(){
     var temp = document.getElementById("coef");
     temp.reset();
+}
+
+function error(a,b,c){
+    var error = document.getElementById("error");
+
+    if (isNaN(a)){
+        error.innerHTML = "А не число";
+    } else if (isNaN(b)){
+        error.innerHTML = "B не число";
+    } else if (isNaN(c)){
+        error.innerHTML = "C не число";
+    }
+}
+
+function nullA(){
+    var error = document.getElementById('error')
+    error.innerHTML = "Уравнение не квадратное!";
 }
