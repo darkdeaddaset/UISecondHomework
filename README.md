@@ -1,1 +1,3 @@
-# UISecondHomework
+# UISecondHomework(Принято)
+
+Знакомство с JavaScript
